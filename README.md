@@ -1,3 +1,70 @@
+# Weed and crop detection
+
+Thanks to YOLO ROS, we can eaily to transfer  our detection model to robot. If you want to use this model, just check the following contents, then, you can roar in your code! @_@ 
+
+Following the tutorial, we can get the following materials:
+
+- Integrate the YOLO to your robot.
+- Using whatever camera to detect what you like.
+- The excellent detection performance will give some result in some ways.
+
+#  How to easily use
+
+## Installation
+
+### Dependencies
+
+This software is built on the Robotic Operating System ([ROS]), which needs to be [installed](http://wiki.ros.org) first. Additionally, YOLO for ROS depends on following software:
+
+- [OpenCV](http://opencv.org/) (computer vision library),
+- [boost](http://www.boost.org/) (c++ library),
+
+### Building
+
+[![Build Status](https://ci.leggedrobotics.com/buildStatus/icon?job=github_leggedrobotics/darknet_ros/master)](https://ci.leggedrobotics.com/job/github_leggedrobotics/job/darknet_ros/job/master/)
+
+If you need to use this package to detect crop and weeds. You need follow these steps:
+
+```bash
+cd catkin_workspace/src
+git clone --recursive https://github.com/SUSTech-Gardener/darknet_ros.git
+cd ../
+```
+
+To maximize performance, make sure to build in *Release* mode. You can specify the build type by setting
+
+    catkin_make -DCMAKE_BUILD_TYPE=Release
+
+or using the [Catkin Command Line Tools](http://catkin-tools.readthedocs.io/en/latest/index.html#)
+
+    catkin build darknet_ros -DCMAKE_BUILD_TYPE=Release
+
+###  Download weights
+
+The yolo-voc.weights and tiny-yolo-voc.weights are downloaded automatically in the CMakeLists.txt file. If you need to download them again, go into the weights folder and download the two pre-trained weights from the COCO data set:
+
+    cd catkin_workspace/src/darknet_ros/darknet_ros/yolo_network_config/weights/
+    wget http://pjreddie.com/media/files/yolov2.weights
+    wget http://pjreddie.com/media/files/yolov2-tiny.weights
+
+And weights from the VOC data set can be found here:
+
+    wget http://pjreddie.com/media/files/yolov2-voc.weights
+    wget http://pjreddie.com/media/files/yolov2-tiny-voc.weights
+
+And the pre-trained weight from YOLO v3 can be found here:
+
+    wget http://pjreddie.com/media/files/yolov3-tiny.weights
+    wget http://pjreddie.com/media/files/yolov3.weights
+
+There are more pre-trained weights from different data sets reported [here](https://pjreddie.com/darknet/yolo/).
+
+> The crop and weed detection weights file is [here](https://drive.google.com/file/d/1-Aam2D-fqnwecbeHwa4rtzxtNjwcDkP6/view), download it, and move to `catkin_workspace/src/darknet_ros/darknet_ros/yolo_network_config/weights/`
+
+### Other config files are in git, just use it!!!!
+
+
+
 # YOLO ROS: Real-Time Object Detection for ROS
 
 ## Overview

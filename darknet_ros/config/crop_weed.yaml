@@ -1,0 +1,12 @@
+yolo_model:
+
+  config_file:
+    name: crop_weed.cfg
+  weight_file:
+    name: crop_weed_detection.weights
+  threshold:
+    value: 0.7
+  detection_classes:
+    names:
+      - crop
+      - weed

@@ -1,13 +1,15 @@
 subscribers:
 
   camera_reading:
-    topic: /camera/rgb/image_raw
+    topic: /camera/color/image_raw
+    # topic: /usb_cam/image_raw
     queue_size: 1
 
 actions:
 
   camera_reading:
-    name: /darknet_ros/check_for_objects
+    name: /usb/image_raw
+    queue_size: 1
 
 publishers:
 
