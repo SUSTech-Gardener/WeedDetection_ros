@@ -63,7 +63,24 @@ There are more pre-trained weights from different data sets reported [here](http
 
 ### Other config files are in git, just use it!!!!
 
+## Usage
 
+You need a camera to detect. 
+
+```bash
+source devel/setup.bash
+roslaunch darknet_ros crop_weed_detection.launch
+```
+
+Launch the camera node(e g: RealSense D435i ): 
+
+```bash
+roslaunch realsense2_camera rs_camera.launch
+```
+
+You will get:
+
+![](./darknet_ros/doc/f1.png)
 
 # YOLO ROS: Real-Time Object Detection for ROS
 
